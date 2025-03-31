@@ -1,10 +1,19 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import StartEnd from "./start-end"
 import Steps from "./steps"
 import { useRouter } from "next/navigation"
 
+
+export default function Onboarding() {
+  const [step, setStep] = useState(null); // Start with null to avoid SSR mismatch
+  const router = useRouter();
+
+  useEffect(() => {
+    setStep(0); // Set initial state after component mounts
+  }, []);
+  if (step === null) return null; // Prevent rendering mismatched content
 const levels = [
   {
     title: 'Beginner',
@@ -90,7 +99,7 @@ const notifications = [
   {
     title: 'Weekly',
     subTitle: 'Get a summary of your progress once a week.',
-    icon: 'calendar.png',
+    icon: '/calendar.png',
   },
   {
     title: 'Only for important updates',
@@ -121,11 +130,6 @@ const goals = [
     icon: '/firstaid.png',
   }
 ]
-
-export default function Onboarding() {
-  if (typeof window === "undefined") return null;
-  const [step, setStep] = useState(0)
-  const router = useRouter();
   
   const getStep = (step) => {
     switch (step) {
