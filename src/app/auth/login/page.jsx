@@ -8,6 +8,8 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react"; // Using Lucide icons
+import { useRouter } from "next/navigation.js";
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -17,7 +19,7 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
-
+  const router = useRouter();
   const validate = () => {
     const newErrors = { email: "", password: "" };
 
@@ -40,7 +42,8 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted");
+      console.log("Form submitted");  
+      router.push("/onboarding")
       // Submit form logic
     }
   };

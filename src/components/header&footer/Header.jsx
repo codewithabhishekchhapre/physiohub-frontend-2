@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import logo from "../../../public/logo-on-light.png"
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false); 
@@ -14,7 +15,9 @@ function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <span className="text-xl font-bold text-gray-800 flex items-center">
-              
+              <Link href={"/"}>
+              <img className=" w-[160px]" src={"/logo-on-light.png"} />
+              </Link>
             </span>
           </div>
 
@@ -31,7 +34,7 @@ function Header() {
             <Link href={"/auth/login"}>
             <button className="border border-purple-600 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-100">Login</button>
             </Link>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Sign In</button>
+            <Link href={"/auth/signup"} className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Sign In</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -50,8 +53,8 @@ function Header() {
           <a href="#" className="block text-gray-700 hover:text-purple-600">Articles</a>
           <a href="#" className="block text-gray-700 hover:text-purple-600">About Us</a>
           <a href="#" className="block text-gray-700 hover:text-purple-600">Contact</a>
-          <button className="w-full border border-purple-600 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-100">Login</button>
-          <button className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Sign In</button>
+          <Link href={"/auth/login"} className="w-full border border-purple-600 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-100">Login</Link>
+          <Link href={"/auth/signup"} className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Sign In</Link>
         </div>
       )}
     </nav>
