@@ -10,11 +10,8 @@ export default function Onboarding() {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof document !== "undefined") {
       setStep(0); // Only run this on the client side
-    }
   }, []);
-  if (step === null) return null; // Prevent rendering mismatched content
 const levels = [
   {
     title: 'Beginner',
