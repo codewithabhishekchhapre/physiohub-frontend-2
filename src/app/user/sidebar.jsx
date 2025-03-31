@@ -60,11 +60,11 @@ const Sidebar = ({onClose}) => {
                     </button>
 
                     <button
-                        onClick={() => handleSelect('blogs')}
+                        onClick={() => handleSelect('mock')}
                         className={`mb-4 flex items-center md:space-x-0 lg:space-x-2 space-x-2 text-sm cursor-pointer font-semibold p-4 rounded-lg w-full ${pathname === '/user/blogs' ? 'bg-[#F6F9FC] text-[#7240FD]' : 'hover:bg-[#F6F9FC] hover:text-[#7240FD] text-[#687494]'}`}
                     >
                         <FileText size={24} /> {/* Increased size for the icon */}
-                        <span className="md:hidden lg:block">Blogs</span>
+                        <span className="md:hidden lg:block">Mock Test</span>
                     </button>
                 </div>
 
