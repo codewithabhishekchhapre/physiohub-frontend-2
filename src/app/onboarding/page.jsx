@@ -123,8 +123,10 @@ const goals = [
 ]
 
 export default function Onboarding() {
+  if (typeof window === "undefined") return null;
   const [step, setStep] = useState(0)
   const router = useRouter();
+  
   const getStep = (step) => {
     switch (step) {
       case 0:
