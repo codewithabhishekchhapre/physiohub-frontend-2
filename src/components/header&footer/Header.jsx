@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false); 
@@ -27,7 +28,9 @@ function Header() {
 
           {/* Buttons */}
           <div className="hidden md:flex space-x-4">
+            <Link href={"/auth/login"}>
             <button className="border border-purple-600 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-100">Login</button>
+            </Link>
             <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Sign In</button>
           </div>
 
