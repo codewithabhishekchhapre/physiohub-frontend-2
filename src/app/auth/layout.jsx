@@ -9,6 +9,8 @@ import { useEffect, useState, useRef } from "react";
 // import { Card, CardContent } from "@/components/ui";
 import { LineChart, Activity } from "lucide-react";
 import { Card, CardContent } from "../../components/ui/card";
+import LottiePlayer from "../../components/animations/LottiePlayer";
+import run from "../../components/animations/data/Run.json"
 
 const data = [
     { label: "Jan", value: 40 },
@@ -69,7 +71,7 @@ export default function AuthLayout({ children }) {
     }, []);
 
     return (
-        <div className="min-h-screen w-full flex flex-col lg:flex-row p-6" >
+        <div className="h-screen w-full flex flex-col lg:flex-row p-6" >
             <div className="hidden lg:flex lg:w-1/2 xl:w-2/5  flex-col bg-[#9333EA] rounded-3xl pt-10 pl-8 pr-8 pb-10 relative">
                 <img src={'/logo-on-dark.png'} className="w-45 h-10 mb-10" />
 
@@ -151,13 +153,15 @@ export default function AuthLayout({ children }) {
                             {/* Your content here */}
                             <Card className="w-[11rem] rounded-[20px] shadow-md relative overflow-visible h-fit">
                                 <div className="absolute -top-18 -right-10 -translate-x-1/2 z-10">
-                                    <img
+                                    {/* <img
                                         src="/bird-ping.png" // Replace with your penguin image path
                                         alt="Penguin"
                                         width={100}
                                         height={100}
                                     // fill
-                                    />
+                                    /> */}
+                                    {/* <LottiePlayer animationFile={run} width="200px" height="200px" /> */}
+
                                 </div>
 
                                 <CardContent className="flex flex-col items-center justify-center mt-4">

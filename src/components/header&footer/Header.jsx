@@ -60,7 +60,6 @@ function Header() {
               </div>
             </div>
           </div>
-
           {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden bg-white shadow-md p-4 space-y-4">
@@ -85,6 +84,7 @@ function Header() {
             </div>
           )}
         </nav>
+         
       </div>
     </>
   );
