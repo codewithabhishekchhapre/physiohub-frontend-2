@@ -8,7 +8,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-
+        
         <div>
         <nav className="bg-white shadow-md w-full fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +58,7 @@ function Header() {
                   {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
               </div>
-            </div>
+        </div>
           </div>
           {/* Mobile Menu */}
           {isOpen && (
@@ -87,7 +87,7 @@ function Header() {
          
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu
       {isOpen && (
         <div className="md:hidden bg-white shadow-md p-4 space-y-4">
           <a href="#" className="block text-gray-700 hover:text-purple-600">Features</a>
@@ -99,7 +99,7 @@ function Header() {
         </div>
       )}
     </nav>
-        </div>
+        </div> */}
 
     </>
   );
