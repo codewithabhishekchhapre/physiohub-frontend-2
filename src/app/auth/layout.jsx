@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from "react";
 import { LineChart, Activity } from "lucide-react";
 import { Card, CardContent } from "../../components/ui/card";
 import LottiePlayer from "../../components/animations/LottiePlayer";
-import run from "../../components/animations/data/Run.json"
+import run from "../../components/animations/data/Like.json"
 
 const data = [
     { label: "Jan", value: 40 },
@@ -71,11 +71,11 @@ export default function AuthLayout({ children }) {
     }, []);
 
     return (
-        <div className="h-screen w-full flex flex-col lg:flex-row p-6" >
-            <div className="hidden lg:flex lg:w-1/2 xl:w-2/5  flex-col bg-[#9333EA] rounded-3xl pt-10 pl-8 pr-8 pb-10 relative">
+        <div className="h-screen w-full flex flex-col lg:flex-row p-10" >
+            <div className="hidden lg:flex lg:w-1/2 xl:w-2/5  flex-col bg-[#9333EA] rounded-3xl pt-5 pl-8 pr-8 pb-10 relative">
                 <img src={'/logo-on-dark.png'} className="w-45 h-10 mb-10" />
 
-                <div className="text-white w-full flex flex-col justify-between h-[100%] p-10">
+                <div className="text-white w-full flex flex-col justify-between  p-2">
                     <Swiper
                         modules={[Pagination, Autoplay]}
                         pagination={{ clickable: true }}
@@ -94,16 +94,16 @@ export default function AuthLayout({ children }) {
                     </Swiper>
                     <div className="flex w-[100%]">
                         {/* First Column (takes max space) */}
-                        <div className="flex-1 flex flex-col justify-between">
-                            <Card className="w-full max-w-[14rem] rounded-[20px] shadow-md overflow-hidden mb-5 self-end">
-                                <CardContent className="space-y-4">
+                        <div className="flex-1 flex flex-col  justify-between">
+                            <Card className="w-full max-w-[14rem] rounded-[20px] shadow-md overflow-hidden mb-2 self-end">
+                                <CardContent className="">
                                     <div className="flex justify-between items-start">
-                                        <div className="flex flex-col items-start gap-2">
+                                        <div className="flex flex-col items-start gap-1">
                                             <p className="text-sm font-medium text-black">Over time</p>
                                             <h2 className="text-2xl font-bold text-black">$40K</h2>
                                             <p className="text-xs text-gray-500">Last 7 days</p>
                                         </div>
-                                        <div className="flex flex-col items-end gap-4">
+                                        <div className="flex flex-col items-end gap-2">
                                             <LineChart className="h-5 w-5 text-purple-500" />
 
                                             <div className="text-xs px-2 py-[2px] rounded-full bg-purple-100 text-purple-700 font-medium flex items-center gap-1">
@@ -113,7 +113,7 @@ export default function AuthLayout({ children }) {
                                         </div>
                                     </div>
 
-                                    <div className="w-full h-full relative rounded-lg overflow-hidden mt-10">
+                                    <div className="w-full h-full relative rounded-lg overflow-hidden">
                                         <img
                                             src="/auth-activity.png"
                                             alt="Muscle Stats"
@@ -152,7 +152,7 @@ export default function AuthLayout({ children }) {
                         <div className="flex-none flex mt-38 justify-center text-center w-1/2">
                             {/* Your content here */}
                             <Card className="w-[11rem] rounded-[20px] shadow-md relative overflow-visible h-fit">
-                                <div className="absolute -top-18 -right-10 -translate-x-1/2 z-10">
+                                <div className="absolute -top-32 right-0 z-10">
                                     {/* <img
                                         src="/bird-ping.png" // Replace with your penguin image path
                                         alt="Penguin"
@@ -160,7 +160,7 @@ export default function AuthLayout({ children }) {
                                         height={100}
                                     // fill
                                     /> */}
-                                    {/* <LottiePlayer animationFile={run} width="200px" height="200px" /> */}
+                                    <LottiePlayer animationFile={run} width="150px" height="100px" />
 
                                 </div>
 
