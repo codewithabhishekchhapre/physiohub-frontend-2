@@ -6,6 +6,9 @@ import { Card, CardContent } from "../components/ui/card";
 import { Activity, BadgeCheck, Check, LineChart } from "lucide-react";
 import { FaChartLine, FaFileAlt, FaHeadset, FaStar } from "react-icons/fa";
 
+import LottiePlayer from "../components/animations/LottiePlayer";
+import run from "../components/animations/data/Happy.json"
+
 function Home() {
   const [animated, setAnimated] = useState(false);
   const [percent, setPercent] = useState(0);
@@ -138,14 +141,19 @@ function Home() {
             <div className="flex-none flex mt-38 justify-center text-center w-1/2">
               {/* Your content here */}
               <Card className="w-[11rem] rounded-[20px] shadow-md relative overflow-visible h-fit">
-                <div className="absolute -top-18 -right-10 -translate-x-1/2 z-10">
-                  <img
+
+                <div className="absolute -top-17 -right-10 -translate-x-1/2 z-10">
+                  {/* <img
+
                     src="/bird-ping.png" // Replace with your penguin image path
                     alt="Penguin"
                     width={100}
                     height={100}
                     // fill
-                  />
+
+                  /> */}
+                  <LottiePlayer animationFile={run} width="100px" height="100px" />
+
                 </div>
 
                 <CardContent className="flex flex-col items-center justify-center mt-4">
