@@ -27,21 +27,37 @@ const LevelCard = ({ title, subTitle, icon, isSelected, onClick }) => {
 
 export default function Steps({ title, subTitle, data, onNext, isMulti, step }) {
     const [selected,setSelected ] = useState([]);
+    // const handleStepData = (value) => {
+    //     setSelected((prev)=>{
+    //         prev = [...prev]
+    //         if(isMulti){
+    //             if(prev.includes(value)){
+    //                 prev.splice(prev.indexOf(value))
+    //             }else{
+    //                 prev.push(value)
+    //             }
+    //         }else{
+    //             prev = [value]
+    //         }
+    //         return prev
+    //     })
+    // }
     const handleStepData = (value) => {
-        setSelected((prev)=>{
-            prev = [...prev]
-            if(isMulti){
-                if(prev.includes(value)){
-                    prev.splice(prev.indexOf(value))
-                }else{
-                    prev.push(value)
+        setSelected((prev) => {
+            let updatedSelection = [...prev];
+            if (isMulti) {
+                if (updatedSelection.includes(value)) {
+                    updatedSelection.splice(updatedSelection.indexOf(value), 1);
+                } else {
+                    updatedSelection.push(value);
                 }
-            }else{
-                prev = [value]
+            } else {
+                updatedSelection = [value];
             }
-            return prev
-        })
-    }
+            return updatedSelection;
+        });
+    };
+    
     return <div className="flex p-10 flex-col justify-between flex-grow w-full sm:w-[60%] border">
         <div className="flex flex-col w-full">
             <div className="flex justify-center">
