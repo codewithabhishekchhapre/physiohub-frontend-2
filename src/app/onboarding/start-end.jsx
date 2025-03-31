@@ -2,13 +2,18 @@
 
 import { Button } from "../../components/ui/button.jsx";
 import "./onboarding.css";
+import LottiePlayer from "../../components/animations/LottiePlayer";
+import run from "../../components/animations/data/Hi.json"
+import Link from "next/link";
 
 export default function StartEnd({isEnd,onClick}) {
 
   return (
     <>
       <div className="flex py-6 px-10 w-full">
+        <Link href={"/"}>
         <img className="w-[170px]" src={'/logo-on-light.png'} alt="Logo" />
+        </Link>
       </div>
 
       <div className="flex p-10 flex-col flex-grow items-center justify-center w-full sm:w-[60%]">
@@ -20,11 +25,12 @@ export default function StartEnd({isEnd,onClick}) {
           </p>
           <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-t-white border-l-transparent border-r-transparent"></div>
         </div>
-        <img
+        <LottiePlayer animationFile={run} width="150px" height="100px" />
+        {/* <img
           src="/bird-flying.png"
           alt="Penguin"
           className="h-40 w-40 mt-10"
-        />
+        /> */}
         <Button
           onClick={onClick}
           variant="solid"

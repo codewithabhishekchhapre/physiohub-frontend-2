@@ -7,6 +7,8 @@ import { RiCalendarLine } from 'react-icons/ri';
 import { ChevronDown } from 'lucide-react';
 import { FaTrophy, FaArrowRight } from 'react-icons/fa'; // Trophy icon for Rank
 import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai'; // Up and Down arrows
+import LottiePlayer from "../../../components/animations/LottiePlayer";
+import run from "../../../components/animations/data/Hi.json"
 
 const RecentActivity = () => {
     const activities = [
@@ -351,11 +353,12 @@ export default function Dashboard() {
                     <h2 className="text-lg font-light">Total Lessons Completed</h2>
                     <p className="text-3xl font-bold mt-2">128</p>
                 </div>
-                <img
+                <LottiePlayer animationFile={run} width="130px" height="100px" />
+                {/* <img
                     src="/bird-flying.png"
                     alt="Penguin Illustration"
                     width={150} height={150}
-                />
+                /> */}
             </div>
             <div className="flex space-x-4 mt-4 gap-4 sm:flex-col lg:flex-row md:flex-row">
                 <StatCard
