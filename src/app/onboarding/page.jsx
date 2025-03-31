@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useState } from "react"
 import StartEnd from "./start-end"
 import Steps from "./steps"
@@ -11,7 +10,9 @@ export default function Onboarding() {
   const router = useRouter();
 
   useEffect(() => {
-    setStep(0); // Set initial state after component mounts
+    if (typeof document !== "undefined") {
+      setStep(0); // Only run this on the client side
+    }
   }, []);
   if (step === null) return null; // Prevent rendering mismatched content
 const levels = [
